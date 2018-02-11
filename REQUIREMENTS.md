@@ -1,6 +1,5 @@
 # Project 1 - iOS Task List
 ## COS 470 Spring 2018
-
 ## Specification
 For this project, you are going to build a simple Task List app. Users will be able to open your app and add items to their todo list of things that they want to get done. Each item will have a name, a description, and a way to record whether it has been completed or not. Since we are early in the semester and have not yet covered data storage, the app should pre-populate with just a few example items at start up and work as intended while in use, but it does not have to remember the state of the list from run to run.
 
@@ -28,7 +27,7 @@ To accomplish this, you will (most likely) have some set of the following files 
 * LaunchScreen.storyboard - Built-in by default, you just need to add your names to this.
 * TaskItem.swift - The model class for this app.
 * TaskListTableViewController.swfit - The controller for the list screen.
-* TaskListTableViewCell.swift - Effectively the adapter for this app if you think of the Android version.
+* TaskListTableViewCell.swift - The table cell adapter for this app (may not be needed)
 
 ### Loading Screen Requirements
 
@@ -48,10 +47,12 @@ A very large portion of your overall code base will go into these three files. T
 ### Task List Screen Requirements
 
 * The list should be sorted first by whether the item still needs to be done or not then by date
-** more recent dates at the top
-** completed items move to the bottom
-* Swiping right to left should show a button to mark the item done and to edit the item.
-* The button should swap the done / not done state, and also change the background color of the cell to show its state.
+	* more recent dates at the top
+	* completed items move to the bottom
+* Swiping right to left should show a button to mark the item done.
+	* The button should swap the done / not done state, and also change the background color of the cell to show its state.
+* You should be able to tap on an item to edit it.
+	* After editing an item, when you return to the task list the item should be properly updated and in the right sorted location.
 * Tapping on the + in the upper right takes you to the add new screen.
 
 ### Add Item and Edit Item Requirements
@@ -76,17 +77,21 @@ Layout management can be interesting in Swift and Xcode. Again, here are some re
 
 ### Example Screenshots
 
+![Launch Screen](/assets/project-1-launch.png)
+![Task List](/assets/project-1-tasks-1.png)
+![Task List Swiping](/assets/project-1-tasks-2.png)
+![Task Detail](/assets/project-1-task-detail.png)
 
 ## Submission Notes
 When we work with GitHub this semester, I will take the state of your repos at the start of class on the due date and use that for grading. There is nothing you need to do specifically in GitHub.
 
 * You **must NOT** include a build for iOS (it's doesn't work anyway) in your repository. 
 * You must create a `README.md` file that describes your project and:
-** Project/App Title
-** Basic instructions on usage
-** Any special info we need to run the app
-** Lessons learned (at least one paragraph)
-** You *may* write your report in Markdown format, that would be nice.
+	* Project/App Title
+	* Basic instructions on usage
+	* Any special info we need to run the app
+	* Lessons learned (at least one paragraph)
+	* You *may* write your report in Markdown format, that would be nice.
 
 ## Definitions
 The Internet Engineering Task Force (IETF) Best Practice Document RFC 2119 Key 
@@ -109,3 +114,4 @@ marketplace requires it or because the vendor feels that it enhances the product
 while another vendor may omit the same item.
 
 Much of this project is adapted from a similar course, [CS 4720 Mobile Application Development](https://cs4720.cs.virginia.edu/category/ios) at University of Virginia. Thank you to UVA for the heavy lifting. Green is my pepper.
+
